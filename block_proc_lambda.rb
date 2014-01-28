@@ -1,11 +1,14 @@
+# 匿名块
 def f1
   yield
 end
 
+# 带名字的块
 def f2(&p)
   p.call
 end
 
+# 就是一个参数，可以是个块
 def f3(p)
   p.call
 end
