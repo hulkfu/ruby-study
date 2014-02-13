@@ -29,3 +29,24 @@ def f4(&p)
 end
 
 f4 {}
+
+
+# 用 & 可以将proc或者lambda变成一个块
+def f5
+  puts "Hello, #{yield}"
+end
+
+f5 { "World" }
+p = -> { "World" }
+f5 &p
+
+# proc 和 lambda的区别
+def f6(callable)
+  callable.call * 2
+end
+
+l = -> { return 10 }
+puts f6(l)
+p = proc { return 10 }
+# LocalJumpError，因为proc会在定义它的作用域里返回，而lambda仅仅从这个lambda返回
+puts f6(p)
