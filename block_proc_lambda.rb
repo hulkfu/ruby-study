@@ -1,6 +1,6 @@
 # 匿名块
 def f1
-  yield
+  yield if block_given?
 end
 
 # 带名字的块
