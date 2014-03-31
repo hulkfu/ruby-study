@@ -14,3 +14,16 @@ def hello(*params)
 end
 
 hello "hi","d"
+
+##
+# 最后一个参数可以是hash
+
+def hi(options={})
+  name = options[:name]
+  age = options[:age]
+  sex = options[:sex] || 'securet'
+  puts "I am #{name}, I am #{age} and my sex is #{sex}"
+end
+
+hi(name:"Jim", age:18, sex:"male")
+hi name:"Bill", age:18
