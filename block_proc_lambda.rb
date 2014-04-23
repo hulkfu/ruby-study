@@ -4,8 +4,8 @@ def f1
 end
 
 # 带名字的块
-def f2(&p)
-  p.call
+def f2(name, &p)
+  p.call(name)
 end
 
 # 就是一个参数，可以是个块
@@ -15,7 +15,7 @@ end
 
 f1 { puts "f1" }
 
-f2 { puts "f2" }
+f2('Aston') { |name| puts "f2# name: #{name}" }
 
 f3(proc{ puts "f3"} )
 f3(Proc.new{puts "f3"})
