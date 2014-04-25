@@ -12,6 +12,7 @@ puts b
 b.map {|x| x<<"1"}
 puts b
 
+# yield就是把块插到yield处执行
 
 def a_m(x, y)
   p local_variables
