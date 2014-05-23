@@ -49,5 +49,14 @@ l = -> { return 10 }
 puts f6(l)
 p = proc { return 10 }
 # LocalJumpError，因为proc会在定义它的作用域里返回，而lambda仅仅从这个lambda返回
-puts f6(p)
+# puts f6(p)
+
+def f7(l1, l2)
+  puts "f7"
+  name = "Aston"
+  l1.call name
+  l2.call
+end
+
+f7 lambda{ |name| puts "l1: #{name}"}, lambda{puts "l2"}
 
